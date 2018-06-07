@@ -1,1 +1,6 @@
-<div>areas-dropdown-selector works!</div>
+<ss-multiselect-dropdown [settings]="settings"
+                         [options]="options"
+                         [(ngModel)]="selectedOptions"
+                         (onAdded)="onAdded($event)"
+                         (onRemoved)="onRemoved($event)">
+</ss-multiselect-dropdown>

@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 import { AppComponent } from './app.component';
 import { AreasSelectorComponent } from './components/areas-selector/areas-selector.component';
@@ -14,7 +16,9 @@ import { AreasDropdownSelectorComponent } from './components/areas-selector/area
     AreasDropdownSelectorComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    MultiselectDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
