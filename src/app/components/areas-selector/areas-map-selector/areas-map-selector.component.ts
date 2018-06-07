@@ -15,4 +15,7 @@ export class AreasMapSelectorComponent implements OnInit {
   ngOnInit() {
   }
 
+  onAreaClick(event) {
+    console.log(event.target);
+  }
 }
