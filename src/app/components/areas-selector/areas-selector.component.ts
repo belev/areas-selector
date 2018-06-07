@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Areas } from '../../shared/areas';
 
 @Component({
   selector: 'areas-selector',
   templateUrl: './areas-selector.component.html',
   styleUrls: ['./areas-selector.component.less']
 })
-export class AreasSelectorComponent implements OnInit {
+export class AreasSelectorComponent {
+  areas: string[] = Areas;
   selectedAreas: string[] = [];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   onAreaSelected(area: string) {
-
+    this.selectedAreas = [...this.selectedAreas, area];
   }
 
+  onAreaDeselected(area: string) {
+    this.selectedAreas = [...this.selectedAreas].filter(a => a !== area);
+  }
 }
