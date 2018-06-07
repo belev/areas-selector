@@ -8,11 +8,11 @@ import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-mul
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreasDropdownSelectorComponent implements OnInit, OnChanges {
-  @Input() areas: string[];
-  @Input() selectedAreas: string[];
+  @Input() private areas: string[] = [];
+  @Input() private selectedAreas: string[] = [];
 
-  @Output() areaSelected: EventEmitter<string> = new EventEmitter<string>();
-  @Output() areaDeselected: EventEmitter<string> = new EventEmitter<string>();
+  @Output() private areaSelected: EventEmitter<string> = new EventEmitter<string>();
+  @Output() private areaDeselected: EventEmitter<string> = new EventEmitter<string>();
 
   settings: IMultiSelectSettings;
   options: IMultiSelectOption[];
@@ -25,7 +25,7 @@ export class AreasDropdownSelectorComponent implements OnInit, OnChanges {
 
     this.options = this.areas
       .slice(0)
-      .sort()
+      .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
       .map(area => ({ id: area, name: area }));
   }
 
