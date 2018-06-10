@@ -1,17 +1,17 @@
 import { fakeAsync, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AreasMapSelectorComponent } from './areas-map-selector.component';
-import { TranslationService } from '../../../services/translation.service';
+import { ChangeLanguageComponent } from './change-language.component';
+import { TranslationService } from '../../services/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 
-describe('AreasMapSelectorComponent', () => {
-  let component: AreasMapSelectorComponent;
-  let fixture: ComponentFixture<AreasMapSelectorComponent>;
+describe('ChangeLanguageComponent', () => {
+  let component: ChangeLanguageComponent;
+  let fixture: ComponentFixture<ChangeLanguageComponent>;
 
   beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AreasMapSelectorComponent
+        ChangeLanguageComponent
       ],
       imports: [
         TranslateModule.forRoot()
@@ -24,7 +24,7 @@ describe('AreasMapSelectorComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AreasMapSelectorComponent);
+    fixture = TestBed.createComponent(ChangeLanguageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

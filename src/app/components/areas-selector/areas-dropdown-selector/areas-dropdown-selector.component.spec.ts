@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AreasDropdownSelectorComponent } from './areas-dropdown-selector.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
@@ -15,7 +16,8 @@ describe('AreasDropdownSelectorComponent', () => {
       ],
       imports: [
         FormsModule,
-        MultiselectDropdownModule
+        MultiselectDropdownModule,
+        TranslateModule.forRoot()
       ]
     })
     .compileComponents();

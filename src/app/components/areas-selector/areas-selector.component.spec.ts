@@ -1,15 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 import { AreasSelectorComponent } from './areas-selector.component';
 import { AreasDropdownSelectorComponent } from './areas-dropdown-selector/areas-dropdown-selector.component';
 import { AreasMapSelectorComponent } from './areas-map-selector/areas-map-selector.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { TranslationService } from '../../services/translation.service';
 
 describe('AreasSelectorComponent', () => {
   let component: AreasSelectorComponent;
   let fixture: ComponentFixture<AreasSelectorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(fakeAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AreasSelectorComponent,
@@ -18,7 +20,11 @@ describe('AreasSelectorComponent', () => {
       ],
       imports: [
         FormsModule,
-        MultiselectDropdownModule
+        MultiselectDropdownModule,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        TranslationService
       ]
     })
     .compileComponents();

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Areas } from '../../shared/areas';
+import { TranslationService } from '../../services/translation.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'areas-selector',
@@ -7,8 +8,14 @@ import { Areas } from '../../shared/areas';
   styleUrls: ['./areas-selector.component.less']
 })
 export class AreasSelectorComponent {
-  areas: string[] = Areas;
+  areas: Observable<{[key: string]: string}>;
   selectedAreas: string[] = [];
+
+  constructor(private translationService: TranslationService) {
+    translationService.languageChanged().subscribe(() => {
+      this.areas = translationService.getTranslations('areas');
+    });
+  }
 
   onAreaSelected(area: string) {
     this.selectedAreas = [...this.selectedAreas, area];
