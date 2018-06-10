@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'areas-selector',
   templateUrl: './areas-selector.component.html',
   styleUrls: ['./areas-selector.component.less']
 })
-export class AreasSelectorComponent {
+export class AreasSelectorComponent implements OnDestroy {
+  private languageChangedSubscription: Subscription;
+
   areas: Observable<{[key: string]: string}>;
   selectedAreas: string[] = [];
 
   constructor(private translationService: TranslationService) {
-    translationService.languageChanged().subscribe(() => {
+    this.languageChangedSubscription = translationService.languageChanged().subscribe(() => {
       this.areas = translationService.getTranslations('areas');
     });
+  }
+
+  ngOnDestroy() {
+    this.languageChangedSubscription.unsubscribe();
   }
 
   onAreaSelected(area: string) {

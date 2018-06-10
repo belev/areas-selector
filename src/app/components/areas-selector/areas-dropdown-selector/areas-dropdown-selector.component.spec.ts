@@ -4,6 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { AreasDropdownSelectorComponent } from './areas-dropdown-selector.component';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { TranslationService } from '../../../services/translation.service';
 
 describe('AreasDropdownSelectorComponent', () => {
   let component: AreasDropdownSelectorComponent;
@@ -18,6 +19,9 @@ describe('AreasDropdownSelectorComponent', () => {
         FormsModule,
         MultiselectDropdownModule,
         TranslateModule.forRoot()
+      ],
+      providers: [
+        TranslationService
       ]
     })
     .compileComponents();
