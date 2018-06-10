@@ -1,4 +1,7 @@
-<areas-map-selector [selectedAreas]="selectedAreas" (areaSelected)="onAreaSelected($event)"></areas-map-selector>
+<areas-map-selector [selectedAreas]="selectedAreas"
+                    (areaSelected)="onAreaSelected($event)"
+                    (areaDeselected)="onAreaDeselected($event)">
+</areas-map-selector>
 <areas-dropdown-selector [areas]="areas"
                          [selectedAreas]="selectedAreas"
                          (areaSelected)="onAreaSelected($event)"
