@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Areas } from '../../shared/areas';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'areas-selector',
@@ -9,6 +10,8 @@ import { Areas } from '../../shared/areas';
 export class AreasSelectorComponent {
   areas: string[] = Areas;
   selectedAreas: string[] = [];
+
+  constructor(translationService: TranslationService) { }
 
   onAreaSelected(area: string) {
     this.selectedAreas = [...this.selectedAreas, area];
