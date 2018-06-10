@@ -209,7 +209,9 @@
     "Lyulin - centar": "Lyulin - centar",
     "SPZ Moderno predgradie": "SPZ Moderno predgradie",
     "PZ Iliyantsi": "PZ Iliyantsi",
-    "kv. Zapaden park": "kv. Zapaden park",
+    "kv. Zapaden park": "kv. Zapaden park"
+  },
+  "parks": {
     "Zapaden park": "Zapaden park",
     "Iztochen park": "Iztochen park",
     "Park Vartolo": "Park Vartolo",
@@ -221,6 +223,7 @@
     "Park Geo Milev": "Park Geo Milev",
     "Park Tsentralni sofiiski grobishta": "Park Tsentralni sofiiski grobishta",
     "Park Malashevski grobishta": "Park Malashevski grobishta",
-    "Park Bakareni grobishta": "Park Bakareni grobishta"
+    "Park Bakareni grobishta": "Park Bakareni grobishta",
+    "Severen park": "Severen park"
   }
 }

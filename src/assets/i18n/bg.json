@@ -209,10 +209,12 @@
     "Lyulin - centar": "Люлин - център",
     "SPZ Moderno predgradie": "СПЗ Модерно предградие",
     "PZ Iliyantsi": "ПЗ Илиянци",
-    "kv. Zapaden park": "кв. Западен парк",
+    "kv. Zapaden park": "кв. Западен парк"
+  },
+  "parks": {
     "Zapaden park": "Западен парк",
     "Iztochen park": "Източен парк",
-    "Park Vartolo": "Парк Вартоло",
+    "Park Vartolo": "Парк Въртоло",
     "Park Botanicheska gradina": "Парк Ботаническа градина",
     "Yuzhen park": "Южен парк",
     "Loven park": "Ловен парк",
@@ -221,6 +223,7 @@
     "Park Geo Milev": "Парк Гео Милев",
     "Park Tsentralni sofiiski grobishta": "Парк Централни софийски гробища",
     "Park Malashevski grobishta": "Парк Малашевски гробища",
-    "Park Bakareni grobishta": "Парк Бакърени гробища"
+    "Park Bakareni grobishta": "Парк Бакърени гробища",
+    "Severen park": "Северен парк"
   }
 }
