@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
+import { getValidHtmlId } from '../../../shared/id-util';
 
 @Component({
   selector: 'areas-dropdown-selector',
@@ -26,7 +27,7 @@ export class AreasDropdownSelectorComponent implements OnInit, OnChanges {
     this.options = this.areas
       .slice(0)
       .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-      .map(area => ({ id: area, name: area }));
+      .map(area => ({ id: getValidHtmlId(area), name: area }));
   }
 
   ngOnChanges(changes: SimpleChanges) {
