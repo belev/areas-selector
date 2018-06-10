@@ -9,8 +9,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts } from 'angular-2-dropdown-multiselect';
-import { getValidHtmlId } from '../../../shared/id-util';
-import {TranslationService} from '../../../services/translation.service';
+import { TranslationService } from '../../../services/translation.service';
 import { LangChangeEvent } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 
@@ -58,7 +57,7 @@ export class AreasDropdownSelectorComponent implements OnChanges, OnDestroy {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.areas && changes.areas.currentValue) {
       this.options = Object.keys(changes.areas.currentValue)
-        .map(areaKey => ({ id: getValidHtmlId(areaKey), name: changes.areas.currentValue[areaKey] }))
+        .map(areaKey => ({ id: areaKey, name: changes.areas.currentValue[areaKey] }))
         .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
     }
 

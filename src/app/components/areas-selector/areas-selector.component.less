@@ -1,16 +1,29 @@
 :host {
+  padding: 50px;
+}
+
+.flex-container {
   display: flex;
   flex-direction: row;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 50px;
+}
+
+.selected-areas-container {
+  .flex-container;
+  flex-wrap: wrap;
+  min-height: 40px;
+  padding-bottom: 15px;
+}
+
+.areas-container {
+  .flex-container;
 }
 
 @media (max-width: 768px) {
-  :host {
+  .areas-container {
     flex-direction: column-reverse;
     align-items: center;
-
     padding: 50px 0 350px 0;
   }
 }

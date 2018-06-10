@@ -1,9 +1,15 @@
-<areas-dropdown-selector [areas]="areas | async"
-                         [selectedAreas]="selectedAreas"
-                         (areaSelected)="onAreaSelected($event)"
-                         (areaDeselected)="onAreaDeselected($event)">
-</areas-dropdown-selector>
-<areas-map-selector [selectedAreas]="selectedAreas"
-                    (areaSelected)="onAreaSelected($event)"
-                    (areaDeselected)="onAreaDeselected($event)">
-</areas-map-selector>
+<div class="selected-areas-container">
+ <div *ngFor="let area of selectedAreas; last as isLast">{{('areas.' + area) | translate}}<span *ngIf="!isLast">,&nbsp;</span></div>
+</div>
+
+<div class="areas-container">
+  <areas-dropdown-selector [areas]="areas | async"
+                           [selectedAreas]="selectedAreas"
+                           (areaSelected)="onAreaSelected($event)"
+                           (areaDeselected)="onAreaDeselected($event)">
+  </areas-dropdown-selector>
+  <areas-map-selector [selectedAreas]="selectedAreas"
+                      (areaSelected)="onAreaSelected($event)"
+                      (areaDeselected)="onAreaDeselected($event)">
+  </areas-map-selector>
+</div>
