@@ -3,6 +3,12 @@
   "English": "English",
   "Bulgarian": "Bulgarian",
   "Sofia": "Sofia",
+  "Select all": "Select all",
+  "Deselect all": "Deselect all",
+  "selected": "selected",
+  "Search": "Search...",
+  "Select areas": "Select areas",
+  "Nothing found": "Nothing found...",
   "areas": {
     "zh.k. Razsadnika": "zh.k. Razsadnika",
     "lyulin 1": "lyulin 1",

@@ -3,6 +3,12 @@
   "English": "Английски",
   "Bulgarian": "Български",
   "Sofia": "София",
+  "Select all": "Маркирай всички",
+  "Deselect all": "Отмаркирай всички",
+  "selected": "избрани",
+  "Search": "Търси...",
+  "Select areas": "Избери квартали",
+  "Nothing found": "Няма намерени резултати...",
   "areas": {
     "zh.k. Razsadnika": "ж.к. Разсадника",
     "lyulin 1": "Люлин 1",
