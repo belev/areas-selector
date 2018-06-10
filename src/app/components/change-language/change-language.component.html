@@ -1,0 +1,11 @@
+<div class="change-language-container">
+  {{'Change language' | translate}}:
+  <button type="button" class="btn btn-primary change-language-button"
+          (click)="translationService.setLanguage('en')">
+    {{'English' | translate}}
+  </button>
+  <button type="button" class="btn btn-primary change-language-button"
+          (click)="translationService.setLanguage('bg')">
+    {{'Bulgarian' | translate}}
+  </button>
+</div>

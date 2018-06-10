@@ -10,13 +10,15 @@ import { AreasSelectorComponent } from './components/areas-selector/areas-select
 import { AreasMapSelectorComponent } from './components/areas-selector/areas-map-selector/areas-map-selector.component';
 import { AreasDropdownSelectorComponent } from './components/areas-selector/areas-dropdown-selector/areas-dropdown-selector.component';
 import { createTranslateLoader, TranslationService } from './services/translation.service';
+import { ChangeLanguageComponent } from './components/change-language/change-language.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AreasSelectorComponent,
     AreasMapSelectorComponent,
-    AreasDropdownSelectorComponent
+    AreasDropdownSelectorComponent,
+    ChangeLanguageComponent
   ],
   imports: [
     BrowserModule,
