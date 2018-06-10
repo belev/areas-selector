@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Observable } from 'rxjs';
+import { LangChangeEvent } from '@ngx-translate/core/lib/translate.service';
 
 @Injectable()
 export class TranslationService {
@@ -11,7 +13,15 @@ export class TranslationService {
     this.translateService.use('en');
   }
 
-  public setLanguage(language: string) {
+  languageChanged(): EventEmitter<LangChangeEvent> {
+    return this.translateService.onLangChange;
+  }
+
+  getTranslations(key: string): Observable<{[key: string]: string}> {
+    return this.translateService.get(key);
+  }
+
+  setLanguage(language: string) {
     this.translateService.use(language);
   }
 }

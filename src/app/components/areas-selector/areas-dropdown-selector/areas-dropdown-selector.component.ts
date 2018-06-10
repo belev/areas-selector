@@ -9,7 +9,7 @@ import { getValidHtmlId } from '../../../shared/id-util';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreasDropdownSelectorComponent implements OnInit, OnChanges {
-  @Input() private areas: string[] = [];
+  @Input() private areas: {[key: string]: string} = {};
   @Input() private selectedAreas: string[] = [];
 
   @Output() private areaSelected: EventEmitter<string> = new EventEmitter<string>();
@@ -23,15 +23,18 @@ export class AreasDropdownSelectorComponent implements OnInit, OnChanges {
     this.settings = {
       enableSearch: true
     };
-
-    this.options = this.areas
-      .slice(0)
-      .sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()))
-      .map(area => ({ id: getValidHtmlId(area), name: area }));
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.selectedOptions = [...changes.selectedAreas.currentValue];
+    if (changes.areas && changes.areas.currentValue) {
+      this.options = Object.keys(changes.areas.currentValue)
+        .map(areaKey => ({ id: getValidHtmlId(areaKey), name: changes.areas.currentValue[areaKey] }))
+        .sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+    }
+
+    if (changes.selectedAreas && changes.selectedAreas.currentValue) {
+      this.selectedOptions = [...changes.selectedAreas.currentValue];
+    }
   }
 
   onAdded(value) {

@@ -2,7 +2,7 @@
                     (areaSelected)="onAreaSelected($event)"
                     (areaDeselected)="onAreaDeselected($event)">
 </areas-map-selector>
-<areas-dropdown-selector [areas]="areas"
+<areas-dropdown-selector [areas]="areas | async"
                          [selectedAreas]="selectedAreas"
                          (areaSelected)="onAreaSelected($event)"
                          (areaDeselected)="onAreaDeselected($event)">
