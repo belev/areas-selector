@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'areas-map-selector',
   templateUrl: './areas-map-selector.component.html',
-  styleUrls: ['./areas-map-selector.component.less']
+  styleUrls: ['./areas-map-selector.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AreasMapSelectorComponent implements OnChanges {
 
